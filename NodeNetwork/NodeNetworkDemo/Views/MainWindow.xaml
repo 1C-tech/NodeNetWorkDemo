@@ -1,0 +1,36 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:reactiveUi="http://reactiveui.net"
+        xmlns:nodeList="clr-namespace:NodeNetwork.Toolkit.NodeList;assembly=NodeNetworkToolkit"
+        x:Class="NodeNetworkDemo.Views.MainWindow"
+        Title="NodeNetwork Demo" Height="600" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <nodeList:NodeListView Grid.Column="0" x:Name="nodeList" HorizontalAlignment="Stretch"/>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5"/>
+        
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <reactiveUi:ViewModelViewHost Grid.Row="0" x:Name="viewHost" 
+                                          HorizontalContentAlignment="Stretch" 
+                                          VerticalContentAlignment="Stretch"/>
+            <StatusBar Grid.Row="1">
+                <StatusBarItem>
+                    <TextBlock Text="结果: "/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock x:Name="resultText"/>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <StartupObject>NodeNetworkDemo.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
+    <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="13.2.18" />
+    <PackageReference Include="ReactiveUI.WPF" Version="13.2.18" />
+    <PackageReference Include="Splat.Drawing" Version="11.0.1" />
+  </ItemGroup>
+</Project>
